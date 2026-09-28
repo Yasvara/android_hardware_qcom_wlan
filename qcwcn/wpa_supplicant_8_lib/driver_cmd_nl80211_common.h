@@ -54,8 +54,11 @@
 #define MAX_NUM_MLO_LINKS      15
 #define NL80211_ATTR_MAX_INTERNAL 256
 
-struct wpa_driver_nl80211_data *drv;
-struct i802_bss *bss;
+// Tentative definitions in a shared header; modern linkers
+// (-fno-common) reject the per-TU copies. Single instance lives in
+// driver_cmd_nl80211.c.
+extern struct wpa_driver_nl80211_data *drv;
+extern struct i802_bss *bss;
 struct nl_msg *prepare_nlmsg(struct wpa_driver_nl80211_data *drv,
 		             char *ifname, int cmdid, int subcmd, int flag);
 struct nl_msg *prepare_vendor_nlmsg(struct wpa_driver_nl80211_data *drv,

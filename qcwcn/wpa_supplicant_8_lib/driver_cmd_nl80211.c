@@ -77,6 +77,9 @@
 #define WPA_PS_ENABLED		0
 #define WPA_PS_DISABLED		1
 #define UNUSED(x)	(void)(x)
+// Single instance for the externs in driver_cmd_nl80211_common.h.
+struct wpa_driver_nl80211_data *drv;
+struct i802_bss *bss;
 #define CSI_STATUS_REJECTED      -1
 #define CSI_STATUS_SUCCESS        0
 #define ENHANCED_CFR_VER          2
